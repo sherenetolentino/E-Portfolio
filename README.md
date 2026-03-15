@@ -11,8 +11,8 @@
 
 <br/>
 
-[![Portfolio](https://img.shields.io/badge/View%20Live%20Portfolio-c4795b?style=for-the-badge&logo=googlechrome&logoColor=fafaf8)](https://stlntn4.github.io/WDFOL_Portfolio/)
-[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Stlntn4)
+[![Portfolio](https://img.shields.io/badge/View%20Live%20Portfolio-c4795b?style=for-the-badge&logo=googlechrome&logoColor=fafaf8)](https://sherenetolentino.github.io/E-Portfolio/)
+[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sherenetolentino)
 
 <br/>
 
@@ -116,7 +116,7 @@ I am a front-end designer with a strong interest in **UI/UX design** and user-ce
 
 [![Email](https://img.shields.io/badge/sherenetolentino@email.com-1a1a1a?style=flat-square&logo=gmail&logoColor=c4795b)](mailto:sherenetolentino@email.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-1a1a1a?style=flat-square&logo=linkedin&logoColor=8b9d83)](#)
-[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=flat-square&logo=github&logoColor=fafaf8)](https://github.com/Stlntn4)
+[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=flat-square&logo=github&logoColor=fafaf8)](https://github.com/sherenetolentino)
 [![Behance](https://img.shields.io/badge/Behance-1a1a1a?style=flat-square&logo=behance&logoColor=8b9d83)](#)
 
 ---
