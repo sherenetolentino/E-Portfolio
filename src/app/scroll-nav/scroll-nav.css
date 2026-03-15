@@ -1,0 +1,79 @@
+/* ================================================================
+   scroll-nav.css
+   Both buttons sit fixed on the right edge of the screen,
+   stacked vertically. They work on ALL pages automatically.
+   ================================================================ */
+
+/* Base button — shared styles for both up and down */
+.scroll-btn {
+  position: fixed;
+  right: 28px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-med, rgba(26,26,26,0.16));
+  background: var(--bg-card, #ffffff);
+  color: var(--text-sub, #5a5558);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 500;
+  /* Hidden by default — shown via .visible class */
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85);
+  transition: opacity 0.3s, transform 0.3s, background 0.3s,
+              color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 12px rgba(26,26,26,0.10);
+}
+
+/* Dark mode */
+body.dark-mode .scroll-btn {
+  background: #3a3533;
+  border-color: rgba(240,237,232,0.14);
+  color: #a09a96;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+/* Scroll UP — sits higher */
+.scroll-btn-up {
+  bottom: 88px;
+}
+
+/* Scroll DOWN — sits at bottom */
+.scroll-btn-down {
+  bottom: 36px;
+}
+
+/* Visible state */
+.scroll-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+/* Hover */
+.scroll-btn:hover {
+  background: var(--terra, #c4795b);
+  border-color: var(--terra, #c4795b);
+  color: #f0ede8;
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(196,121,91,0.30);
+}
+
+/* Active press */
+.scroll-btn:active {
+  transform: scale(0.96);
+}
+
+/* Responsive — move slightly left on mobile */
+@media (max-width: 640px) {
+  .scroll-btn {
+    right: 16px;
+    width: 38px;
+    height: 38px;
+  }
+  .scroll-btn-up   { bottom: 78px; }
+  .scroll-btn-down { bottom: 28px; }
+}

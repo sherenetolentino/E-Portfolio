@@ -1,519 +1,89 @@
-/* =============================================
-   CONTACT PAGE — Sherene Tolentino
-   =============================================
-   Fonts loaded in index.html <head>:
-
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-   ============================================= */
-
-/* ── CSS Variables (scoped to this component) ── */
-:host {
-  --black:       #1a1a1a;
-  --white:       #fafaf8;
-  --grey:        #5a5558;
-  --terracotta:  #c4795b;
-  --sage:        #8b9d83;
-  --beige:       #E2E0D8;   /* ← updated: warm greige to match screenshot */
-
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Inter', sans-serif;
-
-  display: block;
-  background-color: var(--beige); /* ← only change: page background set to beige */
-}
-
-body {
-  background-color: #E2E0D8;
-  margin: 0;
-  padding: 0;
-}
-
-/* ── Utility ── */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 2rem;
-}
-
-/* ============================================
-   PAGE HEADER
-   ============================================ */
-.page-header {
-  text-align: center;
-  padding: 12rem 2rem 5rem;
-}
-
-.page-header h1 {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  font-weight: 500;
-  color: var(--black);
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-  margin-bottom: 1.25rem;
-}
-
-.page-header p {
-  font-family: var(--font-body);
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: var(--grey);
-  max-width: 520px;
-  margin-inline: auto;
-  line-height: 1.7;
-}
-
-/* ============================================
-   CONTACT CONTENT
-   ============================================ */
-.contact-content {
-  padding: 2.5rem 0 6rem;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
-  align-items: start;
-}
-
-/* ============================================
-   FORM SECTION
-   ============================================ */
-.form-section {
-  background-color: var(--white);
-  padding: 3rem;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.06);
-}
-
-.form-section h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 400;
-  color: var(--black);
-  letter-spacing: -0.01em;
-  margin-bottom: 2rem;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-group label {
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--black);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.form-control {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--black);
-  background-color: var(--beige);
-  border: 1px solid transparent;
-  border-radius: 2px;
-  padding: 0.875rem 1rem;
-  width: 100%;
-  box-sizing: border-box;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-  outline: none;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-.form-control::placeholder {
-  color: var(--grey);
-  opacity: 0.5;
-}
-
-.form-control:focus {
-  border-color: var(--terracotta);
-  background-color: var(--white);
-}
-
-.form-control.is-invalid {
-  border-color: #c0392b;
-  background-color: #fff5f5;
-}
-
-textarea.form-control {
-  resize: vertical;
-  min-height: 160px;
-  line-height: 1.7;
-}
-
-.btn-primary {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--white);
-  background-color: var(--black);
-  border: none;
-  border-radius: 2px;
-  padding: 1rem 2.25rem;
-  cursor: pointer;
-  letter-spacing: 0.03em;
-  align-self: flex-start;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-.btn-primary:hover {
-  background-color: var(--terracotta);
-  transform: translateY(-1px);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-/* ── Disabled state (while sending) ── */
-.btn-primary:disabled {
-  background-color: var(--grey);
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* ============================================
-   FORM ALERTS (success / error feedback)
-   ============================================ */
-.alert {
-  padding: 1rem 1.25rem;
-  border-radius: 2px;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  font-weight: 400;
-  line-height: 1.6;
-  border-left: 3px solid transparent;
-}
-
-.alert-success {
-  background-color: rgba(139, 157, 131, 0.15);
-  color: #4a6b42;
-  border-left-color: var(--sage);
-}
-
-.alert-error {
-  background-color: rgba(196, 121, 91, 0.1);
-  color: #a0522d;
-  border-left-color: var(--terracotta);
-}
-
-.alert-error a {
-  color: var(--terracotta);
-  text-decoration: underline;
-}
-
-/* Validation Styles */
-.invalid-feedback {
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  color: #c0392b;
-  margin-top: 0.25rem;
-}
-
-/* ============================================
-   INFO SECTION
-   ============================================ */
-.info-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-}
-
-/* ── Info Card (Get In Touch) ── */
-.info-card {
-  background-color: var(--black);
-  padding: 3rem;
-  border-radius: 2px;
-}
-
-.info-card h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 400;
-  color: var(--terracotta);
-  letter-spacing: -0.01em;
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-}
-
-.detail-item .label {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--grey);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.detail-item a,
-.detail-item p {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 300;
-  color: var(--white);
-  text-decoration: none;
-  line-height: 1.6;
-  margin: 0;
-  transition: color 0.2s ease;
-}
-
-.detail-item a:hover {
-  color: var(--terracotta);
-}
-
-/* ── Social Icons ── */
-.social-icons {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.25rem;
-}
-
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: rgba(250, 250, 248, 0.08);
-  border-radius: 2px;
-  color: var(--white);
-  font-size: 1.125rem;
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.social-icons a:hover {
-  background-color: var(--terracotta);
-  color: var(--white);
-}
-
-/* ── Status Card ── */
-.status-card {
-  background-color: var(--white);
-  padding: 2.5rem 3rem;
-  border-radius: 2px;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(26, 26, 26, 0.06);
-}
-
-.status-card h3 {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 400;
-  color: var(--black);
-  letter-spacing: -0.01em;
-  margin-bottom: 0.875rem;
-}
-
-.status-card p {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  font-weight: 300;
-  color: var(--grey);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.status-badge {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--white);
-  background-color: var(--sage);
-  padding: 0.5rem 1.25rem;
-  border-radius: 100px;
-  letter-spacing: 0.02em;
-}
-
-/* ============================================
-   RESPONSIVE — TABLET  (max 1024px)
-   ============================================ */
-@media (max-width: 1024px) {
-  .container {
-    max-width: 100%;
-    padding-inline: 2.5rem;
-  }
-
-  .page-header {
-    padding: 10rem 2.5rem 4rem;
-  }
-
-  .contact-content {
-    padding: 2rem 0 4.5rem;
-  }
-
-  .contact-grid {
-    gap: 2.5rem;
-  }
-
-  .form-section,
-  .info-card,
-  .status-card {
-    padding: 2.5rem;
-  }
-
-  .form-section h2,
-  .info-card h2 {
-    margin-bottom: 1.5rem;
-  }
-}
-
-/* ============================================
-   RESPONSIVE — MOBILE  (max 768px)
-   Stack contact grid vertically
-   ============================================ */
-@media (max-width: 768px) {
-  .container {
-    padding-inline: 1.5rem;
-  }
-
-  .page-header {
-    padding: 9rem 1.5rem 3rem;
-  }
-
-  .page-header h1 {
-    font-size: clamp(2.75rem, 12vw, 3.5rem);
-    margin-bottom: 0.75rem;
-  }
-
-  .page-header p {
-    font-size: 1rem;
-  }
-
-  .contact-content {
-    padding: 1.5rem 0 4rem;
-  }
-
-  /* Stack to single column */
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .form-section {
-    padding: 2rem 1.75rem;
-  }
-
-  .info-card {
-    padding: 2rem 1.75rem;
-  }
-
-  .status-card {
-    padding: 2rem 1.75rem;
-  }
-
-  .btn-primary {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    padding: 1rem;
-  }
-}
-
-/* ============================================
-   RESPONSIVE — SMALL MOBILE  (max 480px)
-   ============================================ */
-@media (max-width: 480px) {
-  .container {
-    padding-inline: 1.25rem;
-  }
-
-  .page-header {
-    padding: 8.5rem 1.25rem 2.5rem;
-  }
-
-  .page-header h1 {
-    font-size: clamp(2.5rem, 13vw, 3rem);
-  }
-
-  .form-section {
-    padding: 1.75rem 1.25rem;
-  }
-
-  .form-section h2,
-  .info-card h2 {
-    font-size: clamp(1.5rem, 6vw, 1.875rem);
-    margin-bottom: 1.25rem;
-  }
-
-  .contact-form {
-    gap: 1.25rem;
-  }
-
-  .form-control {
-    padding: 0.75rem 0.875rem;
-    font-size: 0.9375rem;
-  }
-
-  .info-card {
-    padding: 1.75rem 1.25rem;
-  }
-
-  .contact-details {
-    gap: 1.5rem;
-  }
-
-  .detail-item a,
-  .detail-item p {
-    font-size: 0.9375rem;
-  }
-
-  .social-icons a {
-    width: 2.25rem;
-    height: 2.25rem;
-    font-size: 1rem;
-  }
-
-  .status-card {
-    padding: 1.75rem 1.25rem;
-  }
-
-  .status-card h3 {
-    font-size: clamp(1.375rem, 6vw, 1.75rem);
-  }
-
-  .status-card p {
-    font-size: 0.9rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .info-section {
-    gap: 1.25rem;
-  }
-}
-
-/* ── Darker beige background for Contact Me header and Contact Content ── */
-.page-header {
-  background-color: #e1dbd2; /* darker beige */
-}
-
-.contact-content {
-  background-color: #e1dbd2; /* darker beige */
-}
+/* contact.css — Dual-strategy dark/light mode */
+.reveal-up,.reveal-left,.reveal-right{opacity:0;transition:opacity 0.75s var(--ease),transform 0.75s var(--ease);transition-delay:var(--reveal-delay,0s);animation:ctReveal 0s 1.2s forwards}
+.reveal-up{transform:translateY(36px)}.reveal-left{transform:translateX(-36px)}.reveal-right{transform:translateX(36px)}
+.revealed.reveal-up,.revealed.reveal-left,.revealed.reveal-right{opacity:1!important;transform:translate(0,0)!important;animation:none!important}
+@keyframes ctReveal{to{opacity:1;transform:translate(0,0)}}
+@keyframes ctFadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.animate-fade-up{opacity:0;animation:ctFadeUp 0.9s var(--ease) forwards}
+
+/* Section */
+.contact-section{background:var(--bg-section);padding:100px 48px;transition:background 0.35s}
+body.dark-mode .contact-section{background:#2a2523}
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;min-width:0}
+.contact-inner>*{min-width:0}
+
+/* Form title */
+.contact-form-title{font-family:var(--ff-display);font-size:clamp(30px,4.5vw,48px);font-weight:400;line-height:1.05;letter-spacing:-0.02em;color:var(--text-h);margin:8px 0 28px;transition:color 0.35s}
+body.dark-mode .contact-form-title{color:#f0ede8}
+.contact-form-title em{font-style:italic;color:var(--terra)}
+
+/* Alerts */
+.alert{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;border-radius:10px;font-size:14px;line-height:1.5;margin-bottom:24px}
+.alert-success{background:rgba(139,157,131,0.12);border:1px solid rgba(139,157,131,0.3);color:#4a6a43}
+body.dark-mode .alert-success{background:rgba(139,157,131,0.15);color:#a8c09f}
+.alert-error{background:rgba(196,121,91,0.1);border:1px solid rgba(196,121,91,0.3);color:var(--terra)}
+
+/* Form */
+.contact-form{display:flex;flex-direction:column;gap:22px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-label{font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-sub);transition:color 0.35s}
+body.dark-mode .form-label{color:#a09a96}
+
+/* Inputs — CRITICAL: bg, border, text color all switch */
+.form-input{width:100%;background:var(--input-bg);border:1px solid var(--input-border);border-radius:10px;padding:14px 18px;font-family:var(--ff-body);font-size:14.5px;color:var(--input-text);outline:none;-webkit-appearance:none;transition:border-color 0.3s,box-shadow 0.3s,background 0.35s,color 0.35s}
+body.dark-mode .form-input{background:#3a3533;border-color:rgba(240,237,232,0.14);color:#f0ede8}
+.form-input::placeholder{color:var(--input-placeholder)}
+body.dark-mode .form-input::placeholder{color:#6e6864}
+.form-input:focus{border-color:var(--terra);box-shadow:0 0 0 3px rgba(196,121,91,0.12)}
+.form-textarea{resize:vertical;min-height:140px;line-height:1.65}
+.form-input.input-invalid{border-color:#e07b6a;box-shadow:0 0 0 3px rgba(224,123,106,0.1)}
+.form-error{font-size:12px;color:#e07b6a;margin:0}
+.contact-submit{align-self:flex-start;margin-top:8px}
+.contact-submit:disabled{opacity:0.65;cursor:not-allowed;transform:none!important}
+.sending-state{display:flex;align-items:center;gap:6px}
+.dot-1,.dot-2,.dot-3{font-size:8px;display:inline-block;animation:dotBounce 1.2s ease-in-out infinite}
+.dot-2{animation-delay:0.2s}.dot-3{animation-delay:0.4s}
+@keyframes dotBounce{0%,80%,100%{transform:scale(0.8);opacity:0.4}40%{transform:scale(1.2);opacity:1}}
+
+/* Info column */
+.contact-info-col{display:flex;flex-direction:column;gap:20px}
+
+/* Info card — bg and text switch */
+.info-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:36px 32px;transition:background 0.35s,border-color 0.35s}
+body.dark-mode .info-card{background:#3a3533;border-color:rgba(240,237,232,0.08)}
+.info-card-title{font-family:var(--ff-display);font-size:clamp(26px,3.5vw,38px);font-weight:400;line-height:1.05;letter-spacing:-0.02em;color:var(--text-h);margin:8px 0 28px;transition:color 0.35s}
+body.dark-mode .info-card-title{color:#f0ede8}
+.info-card-title em{font-style:italic;color:var(--terra)}
+.contact-details{display:flex;flex-direction:column;gap:22px}
+.detail-item{display:flex;flex-direction:column;gap:7px}
+.detail-label{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--terra)}
+.detail-label i{font-size:12px}
+.detail-value{font-size:14.5px;color:var(--text-h);margin:0;transition:color 0.35s}
+body.dark-mode .detail-value{color:#f0ede8}
+.detail-link{color:var(--terra);text-decoration:none;transition:opacity 0.25s}
+.detail-link:hover{opacity:0.75}
+
+/* Social buttons */
+.social-icons{display:flex;flex-wrap:wrap;gap:10px}
+.soc-btn{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text-sub);background:var(--bg-alt);border:1px solid var(--border);padding:9px 16px;border-radius:40px;text-decoration:none;transition:border-color 0.3s,color 0.3s,background 0.35s,transform 0.3s}
+body.dark-mode .soc-btn{background:#322e2c;border-color:rgba(240,237,232,0.08);color:#a09a96}
+.soc-btn:hover{border-color:var(--terra);color:var(--terra);background:rgba(196,121,91,0.06);transform:translateY(-2px)}
+.soc-btn i{font-size:14px}
+
+/* Status card */
+.status-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:28px 32px;display:flex;align-items:flex-start;gap:18px;transition:background 0.35s,border-color 0.35s}
+body.dark-mode .status-card{background:#3a3533;border-color:rgba(240,237,232,0.08)}
+.status-dot-wrap{position:relative;flex-shrink:0;width:14px;height:14px;margin-top:4px}
+.status-dot{width:10px;height:10px;border-radius:50%;background:var(--sage);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.status-pulse{position:absolute;inset:-2px;border-radius:50%;border:1.5px solid var(--sage);animation:statusRing 2s ease-in-out infinite}
+@keyframes statusRing{0%,100%{transform:scale(1);opacity:0.8}50%{transform:scale(1.6);opacity:0}}
+.status-text{flex:1;min-width:0}
+.status-title{font-family:var(--ff-display);font-size:20px;font-weight:500;color:var(--text-h);margin-bottom:6px;transition:color 0.35s}
+body.dark-mode .status-title{color:#f0ede8}
+.status-desc{font-size:13.5px;color:var(--text-sub);line-height:1.6;margin-bottom:14px;transition:color 0.35s}
+body.dark-mode .status-desc{color:#a09a96}
+.status-badge{display:inline-block;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);background:rgba(139,157,131,0.12);border:1px solid rgba(139,157,131,0.28);padding:5px 14px;border-radius:40px}
+
+/* Responsive */
+@media(max-width:1024px){.contact-section{padding-left:32px;padding-right:32px}.contact-inner{grid-template-columns:1fr;gap:56px}}
+@media(max-width:640px){.contact-section{padding:72px 20px}.info-card{padding:28px 22px}.status-card{padding:22px}.social-icons{flex-direction:column}.soc-btn{justify-content:center}}

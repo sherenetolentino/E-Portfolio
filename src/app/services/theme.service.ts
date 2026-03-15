@@ -1,42 +1,30 @@
-import { Inject, Injectable } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-  private readonly THEME_KEY = 'portfolio-theme';
-  private isDark = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
-    this.loadTheme();
-  }
+  isDarkMode = false;
 
-  private loadTheme(): void {
-    const saved = localStorage.getItem(this.THEME_KEY);
-    if (saved) {
-      this.isDark = saved === 'dark';
-    } else {
-      // Respect OS preference on first visit
-      this.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  constructor() {
+    // Restores last saved preference when page loads
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      this.isDarkMode = true;
+      document.body.classList.add('dark-mode');
     }
-    this.applyTheme();
   }
 
   toggleTheme(): void {
-    this.isDark = !this.isDark;
-    this.applyTheme();
-    localStorage.setItem(this.THEME_KEY, this.isDark ? 'dark' : 'light');
-  }
+    this.isDarkMode = !this.isDarkMode;
 
-  private applyTheme(): void {
-    this.document.documentElement.setAttribute(
-      'data-theme',
-      this.isDark ? 'dark' : 'light'
-    );
-  }
-
-  get isDarkMode(): boolean {
-    return this.isDark;
+    if (this.isDarkMode) {
+      document.body.classList.add('dark-mode');       // ← THIS is what the CSS reads
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');    // ← THIS removes it
+      localStorage.setItem('theme', 'light');
+    }
   }
 }

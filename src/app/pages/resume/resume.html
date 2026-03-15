@@ -1,214 +1,436 @@
-<!-- PAGE HEADER -->
-<section class="page-header">
-  <div class="container">
-    <h1>Resume</h1>
-    <p>Aspiring web developer with technical knowledge and creativity, seeking to contribute to innovative projects while continuously enhancing skills in designing user-friendly digital solutions.</p>
-    <a href="Resume.pdf" download="Sherene_Tolentino_Resume.pdf" class="btn btn-primary">
+<!--
+  resume.html — Fixed version
+  CHANGES: Removed all Bootstrap btn/container classes that were
+  conflicting with our custom CSS. All Angular bindings unchanged.
+  Download buttons and cert modal logic 100% preserved.
+-->
+
+<!-- ── PAGE HEADER ──────────────────────────────────────────── -->
+<section class="rs-page-header">
+  <div class="rs-header-grain"></div>
+  <div class="rs-header-inner">
+
+    <p class="rs-eyebrow animate-fade-up" style="animation-delay:.05s">
+      <span class="rs-eyebrow-line"></span>
+      My Background
+    </p>
+
+    <h1 class="rs-header-title animate-fade-up" style="animation-delay:.2s">
+      Res<em>ume</em>
+    </h1>
+
+    <p class="rs-header-sub animate-fade-up" style="animation-delay:.35s">
+      Aspiring web developer with technical knowledge and creativity, seeking to
+      contribute to innovative projects while continuously enhancing skills in
+      designing user-friendly digital solutions.
+    </p>
+
+    <!--
+      DOWNLOAD BUTTON — top of page
+      CHANGE IF NEEDED: Update href path if you move the PDF file.
+      Current path: Resume.pdf (project root)
+    -->
+    <a href="Resume.pdf"
+       download="Sherene_Tolentino_Resume.pdf"
+       class="rs-dl-btn animate-fade-up"
+       style="animation-delay:.5s">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 2v8M5 8l3 3 3-3M3 13h10"
+              stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
       Download PDF Resume
     </a>
+
   </div>
+  <div class="rs-header-bg-word" aria-hidden="true">Resume</div>
 </section>
 
-<!-- EDUCATION -->
-<section class="resume-section">
-  <div class="container">
-    <h2 class="section-title">Education</h2>
-    <div class="resume-grid">
-      <div class="resume-item">
-        <h3>Bachelor of Science in Information Technology</h3>
-        <p class="detail">Major in Web Development</p>
-        <p class="year">2023 - Present</p>
-        <p class="institution">Holy Angel University - Angeles City, Pampanga</p>
-      </div>
-      <div class="resume-item">
-        <h3>Senior High School (TVL - ICT Strand)</h3>
-        <p class="year">2021 - 2023</p>
-        <p class="institution">Holy Angel University - Angeles City, Pampanga</p>
-      </div>
-      <div class="resume-item">
-        <h3>Junior High School</h3>
-        <p class="year">2016 - 2021</p>
-        <p class="institution">Montessori High School of St. Nicholas - Mabalacat City, Pampanga</p>
-      </div>
-      <div class="resume-item">
-        <h3>Primary Education</h3>
-        <p class="year">2010 - 2016</p>
-        <p class="institution">Montessori School of St. Nicholas - Mabalacat City, Pampanga</p>
-      </div>
+<!-- ── EDUCATION ─────────────────────────────────────────────── -->
+<section class="rs-section">
+  <div class="rs-inner">
+
+    <div class="rs-sec-header reveal-up">
+      <span class="rs-sec-index">01</span>
+      <h2 class="rs-sec-heading">Edu<em>cation</em></h2>
     </div>
-  </div>
-</section>
 
-<!-- CERTIFICATIONS -->
-<section class="certifications-section">
-  <div class="container">
-    <h2 class="section-title">Certifications & Training</h2>
-    <div class="cert-columns">
+    <div class="rs-timeline">
 
-      <div class="cert-column">
-        <h3>FreeCodeCamp Certificates</h3>
-        <ul>
-          <li class="cert-link" (click)="openCert('Responsive Web Design', 'assets/certificates/cert-responsive-web-design.png')">
-            Responsive Web Design
-          </li>
-          <li class="cert-link" (click)="openCert('Legacy JavaScript Algorithms and Data Structures', 'assets/certificates/cert-javascript-algorithms.png')">
-            Legacy JavaScript Algorithms and Data Structures
-          </li>
-          <li class="cert-link" (click)="openCert('Back End Development and APIs', 'assets/certificates/cert-backend-apis.png')">
-            Back End Development and APIs
-          </li>
-        </ul>
+      <!-- CHANGE IF NEEDED: Update years, degree names, institutions -->
+      <div class="rs-timeline-item reveal-up" style="--reveal-delay:.05s">
+        <div class="rs-timeline-year">
+          <span>2023 – Present</span>
+        </div>
+        <div class="rs-timeline-dot"></div>
+        <div class="rs-timeline-body">
+          <h3>Bachelor of Science in Information Technology</h3>
+          <p class="rs-major">Major in Web Development</p>
+          <p class="rs-school">Holy Angel University — Angeles City, Pampanga</p>
+        </div>
       </div>
 
-      <div class="cert-column">
-        <h3>Seminars & Workshops</h3>
-        <ul>
-          <li class="cert-link" (click)="openCert('Figma UI UX Design Essentials', 'assets/certificates/cert-figma-uiux.jpg')">
-            Figma UI UX Design Essentials
-          </li>
-          <li class="cert-link" (click)="openCert('Content Marketing Certified', 'assets/certificates/cert-content-marketing.png')">
-            Content Marketing Certified
-          </li>
-          <li class="cert-link" (click)="openCert('Digital Advertising Certificate', 'assets/certificates/cert-digital-advertising.png')">
-            Digital Advertising Certificate
-          </li>
-          <li class="cert-link" (click)="openCert('Digital Marketing Certificate', 'assets/certificates/cert-digital-marketing.png')">
-            Digital Marketing Certificate
-          </li>
-          <li class="cert-link" (click)="openCert('Sleek & Swift: A Hands-on Tailwind and Shadcn Workshop', 'assets/certificates/cert-tailwind-shadcn.png')">
-            Sleek &amp; Swift: A Hands-on Tailwind and Shadcn Workshop
-          </li>
-          <li class="cert-link" (click)="openCert('Design Thinking for Beginners', 'assets/certificates/cert-design-thinking.pdf')">
-            Design Thinking for Beginners
-          </li>
-          <li class="cert-link" (click)="openCert('Introduction to Graphic Design - Basics of UI UX', 'assets/certificates/cert-graphic-design-uiux.pdf')">
-            Introduction to Graphic Design - Basics of UI UX
-          </li>
-          <li class="cert-link" (click)="openCert('Introduction to PHP', 'assets/certificates/cert-intro-php.pdf')">
-            Introduction to PHP
-          </li>
-        </ul>
+      <div class="rs-timeline-item reveal-up" style="--reveal-delay:.12s">
+        <div class="rs-timeline-year"><span>2021 – 2023</span></div>
+        <div class="rs-timeline-dot"></div>
+        <div class="rs-timeline-body">
+          <h3>Senior High School (TVL – ICT Strand)</h3>
+          <p class="rs-school">Holy Angel University — Angeles City, Pampanga</p>
+        </div>
+      </div>
+
+      <div class="rs-timeline-item reveal-up" style="--reveal-delay:.19s">
+        <div class="rs-timeline-year"><span>2016 – 2021</span></div>
+        <div class="rs-timeline-dot"></div>
+        <div class="rs-timeline-body">
+          <h3>Junior High School</h3>
+          <p class="rs-school">Montessori High School of St. Nicholas — Mabalacat City, Pampanga</p>
+        </div>
+      </div>
+
+      <div class="rs-timeline-item reveal-up" style="--reveal-delay:.26s">
+        <div class="rs-timeline-year"><span>2010 – 2016</span></div>
+        <div class="rs-timeline-dot"></div>
+        <div class="rs-timeline-body">
+          <h3>Primary Education</h3>
+          <p class="rs-school">Montessori School of St. Nicholas — Mabalacat City, Pampanga</p>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- TECHNICAL PROFICIENCY -->
-<section class="proficiency-section">
-  <div class="container">
-    <h2 class="section-title">Technical Proficiency</h2>
-    <div class="proficiency-grid">
-      <div class="proficiency-card">
+<!-- ── CERTIFICATIONS ─────────────────────────────────────────── -->
+<section class="rs-section rs-section-alt">
+  <div class="rs-inner">
+
+    <div class="rs-sec-header reveal-up">
+      <span class="rs-sec-index">02</span>
+      <h2 class="rs-sec-heading">Certifi<em>cations</em></h2>
+    </div>
+
+    <!-- 4-column cert grid — stacks to 2 col on tablet, 1 col on mobile -->
+    <div class="rs-cert-cols rs-cert-cols-4">
+
+      <!-- ── Column 1: FreeCodeCamp ── -->
+      <div class="rs-cert-col reveal-up" style="--reveal-delay:.00s">
+        <h3 class="rs-cert-col-title">FreeCodeCamp &amp; AWS</h3>
+        <ul class="rs-cert-list">
+          <li class="rs-cert-item"
+              (click)="openCert('Responsive Web Design', 'assets/certificates/cert-responsive-web-design.png')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Responsive Web Design</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Legacy JavaScript Algorithms and Data Structures', 'assets/certificates/cert-javascript-algorithms.png')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Legacy JavaScript Algorithms and Data Structures</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Back End Development and APIs', 'assets/certificates/cert-backend-apis.png')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Back End Development and APIs</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('JavaScript Essentials 1', 'assets/certificates/cert-javascript-essentials.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">JavaScript Essentials 1</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('AWS Academy Graduate - Cloud Foundations', 'assets/certificates/cert-aws-cloud-foundations.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">AWS Academy Graduate – Cloud Foundations</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── Column 2: Design & Development ── -->
+      <div class="rs-cert-col reveal-up" style="--reveal-delay:.08s">
+        <h3 class="rs-cert-col-title">Design &amp; Development</h3>
+        <ul class="rs-cert-list">
+          <li class="rs-cert-item"
+              (click)="openCert('Figma UI UX Design Essentials', 'assets/certificates/cert-figma-uiux.jpg')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Figma UI UX Design Essentials</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Introduction to Graphic Design - Basics of UI UX', 'assets/certificates/cert-graphic-design-uiux.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Introduction to Graphic Design – Basics of UI UX</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Design Thinking for Beginners', 'assets/certificates/cert-design-thinking.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Design Thinking for Beginners</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Sleek &amp; Swift: Tailwind and Shadcn Workshop', 'assets/certificates/cert-tailwind-shadcn.png')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Sleek &amp; Swift: A Hands-on Tailwind and Shadcn Workshop</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Introduction to PHP', 'assets/certificates/cert-intro-php.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Introduction to PHP</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── Column 3: Marketing & SEO ── -->
+      <div class="rs-cert-col reveal-up" style="--reveal-delay:.16s">
+        <h3 class="rs-cert-col-title">Marketing &amp; SEO</h3>
+        <ul class="rs-cert-list">
+          <li class="rs-cert-item"
+              (click)="openCert('Content Marketing Certified', 'assets/certificates/cert-content-marketing.png')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Content Marketing Certified</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Digital Advertising Certificate', 'assets/certificates/cert-digital-advertising.png')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Digital Advertising Certificate</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Digital Marketing Certificate', 'assets/certificates/cert-digital-marketing.png')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Digital Marketing Certificate</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('HubSpot SEO II Certified', 'assets/certificates/cert-hubspot-seo.png')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">HubSpot SEO II Certified</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('SEO I - Certificate', 'assets/certificates/cert-seo-1.png')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">SEO I – Certificate</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── Column 4: Google Analytics ── -->
+      <div class="rs-cert-col reveal-up" style="--reveal-delay:.24s">
+        <h3 class="rs-cert-col-title">Google Analytics</h3>
+        <ul class="rs-cert-list">
+          <li class="rs-cert-item"
+              (click)="openCert('Google Analytics Certification', 'assets/certificates/cert-google-analytics.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Google Analytics Certification</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Get Started Using Google Analytics', 'assets/certificates/cert-ga4-get-started.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Get Started Using Google Analytics</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Dive Deeper into GA4 Data and Reports', 'assets/certificates/cert-ga4-dive-deeper.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Dive Deeper into GA4 Data and Reports</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Manage GA4 Data and Learn to Read Reports', 'assets/certificates/cert-ga4-manage.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Manage GA4 Data and Learn to Read Reports</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+          <li class="rs-cert-item"
+              (click)="openCert('Use GA4 with Other Data Sources', 'assets/certificates/cert-ga4-other-sources.pdf')">
+            <span class="rs-cert-dot">◆</span>
+            <span class="rs-cert-name">Use GA4 with Other Data Sources</span>
+            <span class="rs-cert-action">View ↗</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TECHNICAL PROFICIENCY ──────────────────────────────────── -->
+<section class="rs-section">
+  <div class="rs-inner">
+
+    <div class="rs-sec-header reveal-up">
+      <span class="rs-sec-index">03</span>
+      <h2 class="rs-sec-heading">Technical<br><em>Proficiency</em></h2>
+    </div>
+
+    <!-- CHANGE IF NEEDED: Edit skill descriptions -->
+    <div class="rs-prof-grid">
+      <div class="rs-prof-card reveal-up" style="--reveal-delay:.00s">
+        <span class="rs-prof-icon">⟨/⟩</span>
         <h3>Front-End Development</h3>
         <p>HTML, CSS, JavaScript, Responsive Design</p>
       </div>
-      <div class="proficiency-card">
+      <div class="rs-prof-card reveal-up" style="--reveal-delay:.07s">
+        <span class="rs-prof-icon">✦</span>
         <h3>Design Tools</h3>
         <p>Figma, Adobe Illustrator</p>
       </div>
-      <div class="proficiency-card">
+      <div class="rs-prof-card reveal-up" style="--reveal-delay:.14s">
+        <span class="rs-prof-icon">⬡</span>
         <h3>Back-End Programming</h3>
         <p>PHP, Python, Java (OOP), Node.js Concepts</p>
       </div>
-      <div class="proficiency-card">
+      <div class="rs-prof-card reveal-up" style="--reveal-delay:.21s">
+        <span class="rs-prof-icon">◎</span>
         <h3>Database Management</h3>
         <p>SQL, MongoDB</p>
       </div>
-      <div class="proficiency-card">
+      <div class="rs-prof-card reveal-up" style="--reveal-delay:.28s">
+        <span class="rs-prof-icon">⚙</span>
         <h3>Development Tools</h3>
-        <p>Visual Studio Code, Sublime Text, GitHub, WordPress, CMS</p>
+        <p>VS Code, Sublime Text, GitHub, WordPress, CMS</p>
       </div>
-      <div class="proficiency-card">
+      <div class="rs-prof-card reveal-up" style="--reveal-delay:.35s">
+        <span class="rs-prof-icon">★</span>
         <h3>Additional Skills</h3>
         <p>Computer Networking, Cybersecurity Fundamentals, Hardware/Software Troubleshooting</p>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- PROFESSIONAL SKILLS -->
-<section class="professional-section">
-  <div class="container">
-    <h2 class="section-title">Professional Skills</h2>
-    <div class="professional-grid">
-      <div class="professional-card">
-        <h3>Communication & Leadership</h3>
+<!-- ── PROFESSIONAL SKILLS ────────────────────────────────────── -->
+<section class="rs-section rs-section-alt">
+  <div class="rs-inner">
+
+    <div class="rs-sec-header reveal-up">
+      <span class="rs-sec-index">04</span>
+      <h2 class="rs-sec-heading">Professional<br><em>Skills</em></h2>
+    </div>
+
+    <div class="rs-pro-grid">
+      <div class="rs-pro-card reveal-up" style="--reveal-delay:.00s">
+        <h3>Communication &amp; Leadership</h3>
         <p>Excellent interpersonal skills, Team collaboration, Leadership abilities</p>
       </div>
-      <div class="professional-card">
-        <h3>Organization & Management</h3>
+      <div class="rs-pro-card reveal-up" style="--reveal-delay:.10s">
+        <h3>Organization &amp; Management</h3>
         <p>Time management, Attention to detail, Project organization</p>
       </div>
-      <div class="professional-card">
+      <div class="rs-pro-card reveal-up" style="--reveal-delay:.20s">
         <h3>Problem Solving</h3>
         <p>Critical thinking, Decision-making, Creative solutions, Adaptability</p>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="container">
-    <h2>Let's Work Together</h2>
-    <p>
-      I'm actively seeking opportunities in web development and programming where I can
-      apply my technical knowledge and creativity. Open to internships, freelance projects,
-      and full-time positions.
+<!-- ── CTA ────────────────────────────────────────────────────── -->
+<section class="rs-cta">
+  <div class="rs-cta-grain"></div>
+  <div class="rs-cta-ring rs-ring-1"></div>
+  <div class="rs-cta-ring rs-ring-2"></div>
+
+  <div class="rs-cta-inner reveal-up">
+    <span class="rs-cta-eye">What's next?</span>
+    <h2 class="rs-cta-title">Let's Work<br><em>Together</em></h2>
+    <p class="rs-cta-desc">
+      I'm actively seeking opportunities in web development and programming where
+      I can apply my technical knowledge and creativity. Open to internships,
+      freelance projects, and full-time positions.
     </p>
-    <div class="cta-buttons">
-      <a href="Resume.pdf" download="Sherene_Tolentino_Resume.pdf" class="btn btn-light">
+    <div class="rs-cta-btns">
+      <!--
+        DOWNLOAD BUTTON — bottom of page (same PDF path)
+        CHANGE IF NEEDED: Update href if PDF path changes.
+      -->
+      <a href="Resume.pdf"
+         download="Sherene_Tolentino_Resume.pdf"
+         class="rs-dl-btn">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <path d="M8 2v8M5 8l3 3 3-3M3 13h10"
+                stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         Download Full Resume
       </a>
-      <a class="btn btn-outline-light" routerLink="/contact">Get In Touch</a>
+      <a class="rs-ghost-btn" routerLink="/contact">Get In Touch</a>
     </div>
   </div>
 </section>
 
-<!-- CERTIFICATE MODAL -->
-<div
-  class="cert-modal-overlay"
-  [class.is-open]="isCertModalOpen"
-  (click)="onOverlayClick($event)">
-  <div class="cert-modal" role="dialog" aria-modal="true" [attr.aria-label]="activeCertTitle">
+<!-- ================================================================
+     CERTIFICATE MODAL
+     Angular bindings unchanged — openCert / closeCert / onOverlayClick
+     preserved exactly. SafeUrlPipe for PDF iframes.
+     ================================================================ -->
+<div class="rs-cert-modal-overlay"
+     [class.is-open]="isCertModalOpen"
+     (click)="onOverlayClick($event)">
 
-    <div class="cert-modal-header">
+  <div class="rs-cert-modal" role="dialog" aria-modal="true"
+       [attr.aria-label]="activeCertTitle">
+
+    <div class="rs-cert-modal-head">
       <h4>{{ activeCertTitle }}</h4>
-      <button class="cert-modal-close" (click)="closeCert()" aria-label="Close">✕</button>
+      <button class="rs-cert-modal-close" (click)="closeCert()" aria-label="Close">✕</button>
     </div>
 
-    <div class="cert-modal-body">
+    <div class="rs-cert-modal-body">
       <ng-container *ngIf="activeCertSrc; else placeholder">
+        <!-- PDF certs shown in iframe using SafeUrlPipe -->
         <iframe
           *ngIf="activeCertSrc.endsWith('.pdf')"
           [src]="activeCertSrc | safe"
           title="Certificate PDF">
         </iframe>
+        <!-- Image certs (PNG, JPG) -->
         <img
           *ngIf="!activeCertSrc.endsWith('.pdf')"
           [src]="activeCertSrc"
-          [alt]="activeCertTitle"
-        />
+          [alt]="activeCertTitle" />
       </ng-container>
+
+      <!-- Shown when cert file not yet uploaded -->
       <ng-template #placeholder>
-        <div class="cert-modal-placeholder">
-          <div class="cert-icon">📜</div>
-          <p class="cert-name">{{ activeCertTitle }}</p>
+        <div class="rs-cert-placeholder">
+          <span class="rs-cert-placeholder-icon">📜</span>
+          <p class="rs-cert-placeholder-name">{{ activeCertTitle }}</p>
           <p>Certificate file not yet uploaded.</p>
         </div>
       </ng-template>
     </div>
 
-    <div class="cert-modal-footer">
-      <a
-        *ngIf="activeCertSrc"
-        [href]="activeCertSrc"
-        [download]="activeCertTitle"
-        class="btn-download">
+    <div class="rs-cert-modal-foot">
+      <!--
+        DOWNLOAD individual cert — only shown when file exists.
+        [href] and [download] are Angular bindings from resume.ts.
+      -->
+      <a *ngIf="activeCertSrc"
+         [href]="activeCertSrc"
+         [download]="activeCertTitle"
+         class="rs-cert-dl-btn">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <path d="M8 2v8M5 8l3 3 3-3M3 13h10"
+                stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         Download
       </a>
-      <button class="btn-close-modal" (click)="closeCert()">Close</button>
+      <button class="rs-cert-close-btn" (click)="closeCert()">Close</button>
     </div>
 
   </div>

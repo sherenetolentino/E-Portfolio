@@ -1,108 +1,232 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top"
-     [class.scrolled]="isScrolled">
-  <div class="container">
+<!--
+  ================================================================
+  navbar.html
+  NOTES / CHANGES:
+  - Removed Bootstrap navbar markup — replaced with custom nav
+  - Added numbered link indices (01–05) that appear on hover
+  - Hamburger replaced with custom animated bars (no Bootstrap JS needed)
+  - Theme toggle uses SVG sun/moon icons instead of text emoji
+  - Mobile drawer is a right-side slide-in panel
+  - Drawer includes social links at the bottom
+  - All routerLink paths are unchanged from your original
+  ================================================================
+-->
 
-    <!-- Brand LEFT -->
-    <a class="navbar-brand" routerLink="/" (click)="closeMenu()">
-      <img src="assets/images/logo.png" alt="Logo" class="logo-placeholder">
-      Sherene Tolentino
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container">
+
+    <!-- ── Brand / Logo ──────────────────────────────────── -->
+    <a class="nav-brand" routerLink="/" (click)="closeMenu()">
+      <!--
+        CHANGE IF NEEDED:
+        If your logo image works, great. If not, the text fallback
+        below always shows. The onerror hides the broken image.
+      -->
+      <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img"
+           onerror="this.style.display='none'" />
+      <span class="nav-brand-text">
+        <span class="brand-serif">Sherene</span>
+        <span class="brand-sub">Tolentino</span>
+      </span>
     </a>
 
-    <!-- Desktop Nav — visible only on lg and up -->
-    <div class="desktop-nav">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item">
-          <a class="nav-link"
-             routerLink="/"
-             routerLinkActive="active"
-             [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/projects" routerLinkActive="active">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/resume" routerLinkActive="active">Resume</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
-        </li>
-        <li class="nav-item ms-3">
-          <a class="nav-link btn-hire" routerLink="/contact">Hire Me</a>
-        </li>
-        <li class="nav-item ms-2">
-          <button class="theme-toggle"
-                  (click)="themeService.toggleTheme()"
-                  [attr.aria-label]="themeService.isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
-                  [title]="themeService.isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
-            {{ themeService.isDarkMode ? '☀︎' : '⏾' }}
-          </button>
-        </li>
-      </ul>
+    <!-- ── Desktop Nav Links ─────────────────────────────── -->
+    <ul class="nav-list">
+      <li>
+        <a class="nav-link" routerLink="/"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }">
+          <span class="nl-idx">01</span>
+          <span class="nl-txt">Home</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/about" routerLinkActive="active">
+          <span class="nl-idx">02</span>
+          <span class="nl-txt">About</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/projects" routerLinkActive="active">
+          <span class="nl-idx">03</span>
+          <span class="nl-txt">Projects</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/resume" routerLinkActive="active">
+          <span class="nl-idx">04</span>
+          <span class="nl-txt">Resume</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/contact" routerLinkActive="active">
+          <span class="nl-idx">05</span>
+          <span class="nl-txt">Contact</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- ── Right Actions ─────────────────────────────────── -->
+    <div class="nav-actions">
+
+      <!-- Hire Me CTA — links to contact page -->
+      <a class="nav-hire" routerLink="/contact">
+        <span>Hire Me</span>
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path d="M2 6.5h9M7 2.5l4 4-4 4" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <!--
+        Theme Toggle Button
+        CHANGE IF NEEDED: ThemeService.toggleTheme() must run:
+          document.body.classList.toggle('dark-mode', this.isDarkMode);
+        The CSS handles icon swap automatically — no extra JS needed.
+      -->
+      <button class="theme-toggle"
+              (click)="themeService.toggleTheme()"
+              [title]="themeService.isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+              [attr.aria-label]="themeService.isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+        <span class="theme-icon-wrap">
+          <!-- Sun icon — visible only in dark mode -->
+          <svg class="t-icon icon-sun" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.42 1.42M11.53 11.53l1.42 1.42M3.05 12.95l1.42-1.42M11.53 4.47l1.42-1.42"
+                  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <!-- Moon icon — visible only in light mode -->
+          <svg class="t-icon icon-moon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M13.5 10A6 6 0 016 2.5a6 6 0 100 11 6 6 0 007.5-3.5z"
+                  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </button>
+
+      <!--
+        Hamburger — only visible on tablet/mobile (≤1024px)
+        Three bars animate into an X when isMenuOpen is true
+      -->
+      <button class="hamburger"
+              type="button"
+              (click)="toggleMenu()"
+              [class.open]="isMenuOpen"
+              [attr.aria-expanded]="isMenuOpen"
+              aria-label="Toggle navigation menu">
+        <span class="hb-bar bar-top"></span>
+        <span class="hb-bar bar-mid"></span>
+        <span class="hb-bar bar-bot"></span>
+      </button>
+
     </div>
-
-    <!-- Hamburger — visible only on mobile -->
-    <button class="navbar-toggler" type="button"
-            (click)="toggleMenu()"
-            [attr.aria-expanded]="isMenuOpen"
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" [class.open]="isMenuOpen"></span>
-    </button>
-
   </div>
 </nav>
 
-<!-- Dark overlay behind the drawer -->
-<div class="drawer-overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
+<!-- ── Dark overlay behind the drawer ───────────────────────── -->
+<div class="drawer-overlay"
+     [class.active]="isMenuOpen"
+     (click)="closeMenu()">
+</div>
 
-<!-- Right-side slide-in drawer -->
-<div class="mobile-drawer" [class.open]="isMenuOpen">
+<!-- ================================================================
+     MOBILE DRAWER
+     Slides in from the right on hamburger click.
+     Always dark background for contrast (works in both modes).
+     ================================================================ -->
+<div class="mobile-drawer" [class.open]="isMenuOpen"
+     role="dialog" aria-label="Navigation menu">
 
-  <!-- Drawer Header -->
-  <div class="drawer-header">
-    <span class="drawer-brand">Menu</span>
-    <button class="drawer-close" (click)="closeMenu()" aria-label="Close menu">✕</button>
+  <!-- Drawer top bar -->
+  <div class="drawer-head">
+    <div class="drawer-brand">
+      <span class="db-mark">ST</span>
+      <span class="db-dot"></span>
+    </div>
+    <button class="drawer-close" (click)="closeMenu()" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M2 2l14 14M16 2L2 16" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
   </div>
 
-  <!-- Drawer Links -->
+  <!-- Drawer links — large serif type -->
   <nav class="drawer-nav">
-    <a class="drawer-link"
-       routerLink="/"
+    <a class="drawer-link" routerLink="/"
        routerLinkActive="drawer-active"
        [routerLinkActiveOptions]="{ exact: true }"
-       (click)="closeMenu()">Home</a>
-
-    <a class="drawer-link"
-       routerLink="/about"
-       routerLinkActive="drawer-active"
-       (click)="closeMenu()">About</a>
-
-    <a class="drawer-link"
-       routerLink="/projects"
-       routerLinkActive="drawer-active"
-       (click)="closeMenu()">Projects</a>
-
-    <a class="drawer-link"
-       routerLink="/resume"
-       routerLinkActive="drawer-active"
-       (click)="closeMenu()">Resume</a>
-
-    <a class="drawer-link"
-       routerLink="/contact"
-       routerLinkActive="drawer-active"
-       (click)="closeMenu()">Contact</a>
+       (click)="closeMenu()">
+      <span class="dl-idx">01</span>
+      <span class="dl-txt">Home</span>
+      <span class="dl-arrow">↗</span>
+    </a>
+    <a class="drawer-link" routerLink="/about"
+       routerLinkActive="drawer-active" (click)="closeMenu()">
+      <span class="dl-idx">02</span>
+      <span class="dl-txt">About</span>
+      <span class="dl-arrow">↗</span>
+    </a>
+    <a class="drawer-link" routerLink="/projects"
+       routerLinkActive="drawer-active" (click)="closeMenu()">
+      <span class="dl-idx">03</span>
+      <span class="dl-txt">Projects</span>
+      <span class="dl-arrow">↗</span>
+    </a>
+    <a class="drawer-link" routerLink="/resume"
+       routerLinkActive="drawer-active" (click)="closeMenu()">
+      <span class="dl-idx">04</span>
+      <span class="dl-txt">Resume</span>
+      <span class="dl-arrow">↗</span>
+    </a>
+    <a class="drawer-link" routerLink="/contact"
+       routerLinkActive="drawer-active" (click)="closeMenu()">
+      <span class="dl-idx">05</span>
+      <span class="dl-txt">Contact</span>
+      <span class="dl-arrow">↗</span>
+    </a>
   </nav>
 
-  <!-- Drawer Footer Actions -->
-  <div class="drawer-footer">
-    <a class="drawer-hire" routerLink="/contact" (click)="closeMenu()">Hire Me</a>
-    <button class="theme-toggle drawer-theme"
+  <!-- Drawer footer — hire + theme + socials -->
+  <div class="drawer-foot">
+    <a class="drawer-hire" routerLink="/contact" (click)="closeMenu()">
+      Hire Me →
+    </a>
+
+    <button class="drawer-theme-btn"
             (click)="themeService.toggleTheme()"
             [attr.aria-label]="themeService.isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
-      {{ themeService.isDarkMode ? '☀︎ Light Mode' : '⏾ Dark Mode' }}
+      <!-- Sun icon in dark mode -->
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+           *ngIf="themeService.isDarkMode">
+        <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <!-- Moon icon in light mode -->
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
+           *ngIf="!themeService.isDarkMode">
+        <path d="M13.5 10A6 6 0 016 2.5a6 6 0 100 11 6 6 0 007.5-3.5z"
+              stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span>{{ themeService.isDarkMode ? 'Light Mode' : 'Dark Mode' }}</span>
     </button>
+
+    <!--
+      Social links in drawer
+      CHANGE IF NEEDED: Update these URLs with your actual profiles
+    -->
+    <div class="drawer-socials">
+      <a href="https://www.linkedin.com/in/sherene-tolentino-3b6022316/"
+         target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="https://github.com/Stlntn4"
+         target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="bi bi-github"></i>
+      </a>
+      <a href="mailto:sherene.tolentino4@gmail.com" aria-label="Email">
+        <i class="bi bi-envelope-fill"></i>
+      </a>
+    </div>
   </div>
 
 </div>

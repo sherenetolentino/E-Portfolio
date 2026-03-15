@@ -1,101 +1,435 @@
-<!-- HERO SECTION -->
+<!--
+  ================================================================
+  home.html
+  NOTES / CHANGES:
+  - Removed the inline <nav> that was duplicated here (now app-navbar)
+  - Project cards updated with REAL names, images, and GitHub links
+  - Social links in hero use your actual LinkedIn/GitHub/email
+  - All cert image paths match your assets/images/cert*.png files
+  - All routerLink paths unchanged
+  
+  CHANGE IF NEEDED:
+  - Hero description text (current = your original text)
+  - Profile photo if you add one to hero: assets/images/sherene.png
+  ================================================================
+-->
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════ -->
 <section class="hero-section">
-    <div class="container">
-        <div class="hero-content">
-            <h1>Sherene Tolentino</h1>
-            <p class="subtitle">Front-End Designer | UI/UX Focused Web Developer</p>
-            <p class="description">
-                I design clean, responsive, and user-centered interfaces that balance 
-                visual appeal and usability. My focus is on front-end development and UI/UX, 
-                creating digital experiences that are intuitive, accessible, and visually 
-                consistent, and I'm always eager to learn more.
-            </p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" routerLink="/projects">View Projects</button>
-                <button class="btn btn-outline" routerLink="/contact">Hire Me</button>
-            </div>
+  <div class="hero-grain"></div>
+  <div class="hero-line hl-1"></div>
+  <div class="hero-line hl-2"></div>
+  <div class="hero-ring hr-1"></div>
+  <div class="hero-ring hr-2"></div>
+
+  <div class="hero-inner">
+
+    <p class="hero-label animate-fade-up" style="animation-delay:.05s">
+      <span class="hero-label-line"></span>
+      Front-End Designer &amp; UI/UX Developer
+    </p>
+
+    <h1 class="hero-name animate-fade-up" style="animation-delay:.22s">
+      <span class="hn-row">Sher<em>ene</em></span>
+      <span class="hn-row hn-offset">Tolen<em>tino</em></span>
+    </h1>
+
+    <!--
+      CHANGE IF NEEDED: Update your tagline/description.
+    -->
+    <p class="hero-desc animate-fade-up" style="animation-delay:.40s">
+      I design clean, responsive, and user‑centered interfaces that balance
+      visual appeal and usability — crafting digital experiences that are
+      intuitive, accessible, and visually consistent.
+    </p>
+
+    <div class="hero-actions animate-fade-up" style="animation-delay:.56s">
+      <a class="btn-primary" routerLink="/projects">
+        <span>View Projects</span>
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a class="btn-ghost" routerLink="/contact">Get In Touch</a>
+    </div>
+
+    <!--
+      Social links in hero
+      CHANGE IF NEEDED: Add more platforms if needed.
+    -->
+    <div class="hero-socials animate-fade-up" style="animation-delay:.70s">
+      <a class="hero-soc-link"
+         href="https://www.linkedin.com/in/sherene-tolentino-3b6022316/"
+         target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a class="hero-soc-link"
+         href="https://github.com/Stlntn4"
+         target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="bi bi-github"></i>
+      </a>
+      <a class="hero-soc-link"
+         href="mailto:sherene.tolentino4@gmail.com" aria-label="Email">
+        <i class="bi bi-envelope-fill"></i>
+      </a>
+      <span class="hero-soc-sep"></span>
+      <span class="hero-soc-label">Find me here</span>
+    </div>
+
+  </div>
+
+  <!-- Floating skill tags (decorative) -->
+  <span class="hero-ftag ht-1" aria-hidden="true">UI/UX</span>
+  <span class="hero-ftag ht-2" aria-hidden="true">Angular</span>
+  <span class="hero-ftag ht-3" aria-hidden="true">Figma</span>
+
+  <!-- Stat -->
+  <div class="hero-stat-badge animate-fade-up" style="animation-delay:.88s">
+    <span class="hsb-num">03+</span>
+    <span class="hsb-lbl">Years<br>Learning</span>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="hero-scroll animate-fade-up" style="animation-delay:1.05s">
+    <span class="hs-lbl">Scroll</span>
+    <span class="hs-line"></span>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ═════════════════════════════════════════════════ -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      <span>HTML &amp; CSS</span><span class="mdot">◆</span>
+      <span>JavaScript</span><span class="mdot">◆</span>
+      <span>Angular</span><span class="mdot">◆</span>
+      <span>Figma</span><span class="mdot">◆</span>
+      <span>UI/UX Design</span><span class="mdot">◆</span>
+      <span>Responsive Design</span><span class="mdot">◆</span>
+      <span>Wireframing &amp; Prototyping</span><span class="mdot">◆</span>
+      <span>Node.js</span><span class="mdot">◆</span>
+      <span>SQL</span><span class="mdot">◆</span>
+      <span>MongoDB</span><span class="mdot">◆</span>
+      <span>Adobe Illustrator</span><span class="mdot">◆</span>
+      <span>PHP</span><span class="mdot">◆</span>
+      <!-- duplicate for seamless loop -->
+      <span>HTML &amp; CSS</span><span class="mdot">◆</span>
+      <span>JavaScript</span><span class="mdot">◆</span>
+      <span>Angular</span><span class="mdot">◆</span>
+      <span>Figma</span><span class="mdot">◆</span>
+      <span>UI/UX Design</span><span class="mdot">◆</span>
+      <span>Responsive Design</span><span class="mdot">◆</span>
+      <span>Wireframing &amp; Prototyping</span><span class="mdot">◆</span>
+      <span>Node.js</span><span class="mdot">◆</span>
+      <span>SQL</span><span class="mdot">◆</span>
+      <span>MongoDB</span><span class="mdot">◆</span>
+      <span>Adobe Illustrator</span><span class="mdot">◆</span>
+      <span>PHP</span><span class="mdot">◆</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT PREVIEW ══════════════════════════════════════════ -->
+<section class="home-about">
+  <div class="ha-deco-circle" aria-hidden="true"></div>
+  <div class="ha-inner">
+
+    <div class="ha-left reveal-left">
+      <span class="sec-index">01</span>
+      <h2 class="sec-heading">About<br><em>Me</em></h2>
+      <div class="ha-bar"></div>
+      <!-- Profile photo thumbnail — links to about page -->
+      <a routerLink="/about" class="ha-avatar">
+        <!--
+          CHANGE IF NEEDED: Image path is assets/images/sherene.png
+        -->
+        <img src="assets/images/sherene.png" alt="Sherene Tolentino"
+             onerror="this.style.display='none'" />
+        <span class="ha-avatar-fb">ST</span>
+      </a>
+    </div>
+
+    <div class="ha-right reveal-right">
+      <p class="ha-lead">
+        Passionate about crafting seamless user experiences and visually engaging interfaces.
+      </p>
+      <p class="ha-body">
+        Through personal projects, academic work, and self‑learning, I continue to
+        strengthen my skills in both front‑end and basic back‑end development,
+        always aiming to grow as a full‑stack capable developer.
+      </p>
+
+      <div class="ha-facts">
+        <div class="ha-fact">
+          <span class="haf-num">3</span>
+          <span class="haf-lbl">Real-world<br>Projects</span>
         </div>
-    </div>
-</section>
-
-<!-- ABOUT PREVIEW -->
-<section class="about-preview">
-    <div class="container">
-        <p class="preview-text">
-            I am passionate about crafting seamless user experiences and visually engaging 
-            interfaces. Through personal projects, academic work, and self-learning, I continue to 
-            strengthen my skills in both front-end and basic back-end development, always aiming 
-            to grow as a full-stack capable developer.
-        </p>
-    </div>
-</section>
-
-<!-- SKILLS & EXPERTISE -->
-<section class="skills-section">
-    <div class="container">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Front-End</h3>
-                <p>HTML, CSS, PHP, JavaScript</p>
-            </div>
-            <div class="skill-card">
-                <h3>Design Tools</h3>
-                <p>Figma, Canva, Adobe Illustrator, Wireframing, Prototyping</p>
-            </div>
-            <div class="skill-card">
-                <h3>UX/UI</h3>
-                <p>User Research, User Flow, Accessibility, Responsive Design</p>
-            </div>
-            <div class="skill-card">
-                <h3>Back-End / Database (Basic)</h3>
-                <p>SQL, MongoDB, Node.js concepts</p>
-            </div>
-            <div class="skill-card">
-                <h3>Soft Skills</h3>
-                <p>Creativity, Problem Solving, Attention to Detail, Communication, Leadership</p>
-            </div>
+        <div class="ha-fact-div"></div>
+        <div class="ha-fact">
+          <span class="haf-num">6+</span>
+          <span class="haf-lbl">Certifications<br>Earned</span>
         </div>
-    </div>
-</section>
-
-<!-- CERTIFICATIONS & ACHIEVEMENTS -->
-<section class="certifications-section">
-    <div class="container">
-        <h2 class="section-title">Certifications & Achievements</h2>
-        <div class="cert-grid">
-            <div class="cert-card" (click)="openLightbox('assets/images/cert1.png', 'Certificate 1')">
-                <img src="assets/images/cert1.png" alt="Certificate 1" class="cert-img" />
-                <div class="cert-overlay"><span>View</span></div>
-            </div>
-            <div class="cert-card" (click)="openLightbox('assets/images/cert2.png', 'Certificate 2')">
-                <img src="assets/images/cert2.png" alt="Certificate 2" class="cert-img" />
-                <div class="cert-overlay"><span>View</span></div>
-            </div>
-            <div class="cert-card" (click)="openLightbox('assets/images/cert3.png', 'Certificate 3')">
-                <img src="assets/images/cert3.png" alt="Certificate 3" class="cert-img" />
-                <div class="cert-overlay"><span>View</span></div>
-            </div>
-            <div class="cert-card" (click)="openLightbox('assets/images/cert4.png', 'Certificate 4')">
-                <img src="assets/images/cert4.png" alt="Certificate 4" class="cert-img" />
-                <div class="cert-overlay"><span>View</span></div>
-            </div>
-            <div class="cert-card" (click)="openLightbox('assets/images/cert5.jpg', 'Certificate 5')">
-                <img src="assets/images/cert5.jpg" alt="Certificate 5" class="cert-img" />
-                <div class="cert-overlay"><span>View</span></div>
-            </div>
-            <div class="cert-card" (click)="openLightbox('assets/images/cert6.png', 'Certificate 6')">
-                <img src="assets/images/cert6.png" alt="Certificate 6" class="cert-img" />
-                <div class="cert-overlay"><span>View</span></div>
-            </div>
+        <div class="ha-fact-div"></div>
+        <div class="ha-fact">
+          <span class="haf-num">∞</span>
+          <span class="haf-lbl">Curiosity to<br>Keep Learning</span>
         </div>
+      </div>
+
+      <a routerLink="/about" class="text-arrow-link">
+        Read full story
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
+  </div>
 </section>
 
-<!-- LIGHTBOX -->
+<!-- ═══ FEATURED PROJECTS ══════════════════════════════════════ -->
+<section class="home-projects">
+
+  <div class="hp-header reveal-up">
+    <div class="hp-header-left">
+      <span class="sec-index">02</span>
+      <h2 class="sec-heading">Featured<br><em>Projects</em></h2>
+    </div>
+    <a routerLink="/projects" class="hp-view-all">
+      All Projects
+      <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hp-grid">
+
+    <!-- ── Barangay Information System ──────────────────────── -->
+    <article class="hp-card hp-card-lg reveal-up" style="--reveal-delay:.05s">
+      <div class="hp-img-wrap">
+        <!--
+          CHANGE IF NEEDED: Image path = assets/images/project-barangay.png
+        -->
+        <img src="assets/images/project-barangay.png"
+             alt="Barangay Information System" class="hp-img"
+             onerror="this.parentElement.classList.add('hp-img-err')" />
+        <div class="hp-img-fb">BIS</div>
+        <div class="hp-overlay">
+          <a href="https://github.com/cassandraarcilla/6WCSERVER-Final-Project"
+             target="_blank" rel="noopener noreferrer" class="hp-overlay-gh"><i class="bi bi-github"></i> GitHub <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 2h8v8M10 2L2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a routerLink="/projects" class="hp-overlay-cs">Case Study <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <span class="hp-corner hp-corner-tl"></span>
+        <span class="hp-corner hp-corner-br"></span>
+      </div>
+      <div class="hp-info">
+        <div class="hp-tags">
+          <span class="hp-tag">UI/UX Design</span>
+          <span class="hp-tag">Group Project</span>
+          <span class="hp-tag hp-tag-yr">2025</span>
+        </div>
+        <h3 class="hp-title">Barangay Information System</h3>
+        <p class="hp-desc">Complete UI/UX design, interactive prototype, and wireframes for a barangay management system — focused on accessibility for government staff and residents.</p>
+        <div class="hp-meta-row">
+          <span><strong>Role:</strong> UI/UX Designer</span>
+          <span><strong>Tools:</strong> Figma · Wireframing</span>
+        </div>
+        <a routerLink="/projects" class="hp-case-link">View Details
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- ── GRG Cafe Website ──────────────────────────────────── -->
+    <article class="hp-card hp-card-sm reveal-up" style="--reveal-delay:.18s">
+      <div class="hp-img-wrap">
+        <img src="assets/images/project-garage-cafe.png"
+             alt="GRG Cafe Website Design" class="hp-img"
+             onerror="this.parentElement.classList.add('hp-img-err')" />
+        <div class="hp-img-fb">GRG</div>
+        <div class="hp-overlay">
+          <a href="https://github.com/cassandraarcilla/Garage_Cafe_Code"
+             target="_blank" rel="noopener noreferrer" class="hp-overlay-gh"><i class="bi bi-github"></i> GitHub <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 2h8v8M10 2L2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a routerLink="/projects" class="hp-overlay-cs">Case Study <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <span class="hp-corner hp-corner-tl"></span>
+        <span class="hp-corner hp-corner-br"></span>
+      </div>
+      <div class="hp-info">
+        <div class="hp-tags">
+          <span class="hp-tag">Web Design</span>
+          <span class="hp-tag">Group Project</span>
+          <span class="hp-tag hp-tag-yr">2025</span>
+        </div>
+        <h3 class="hp-title">GRG Cafe Website Design</h3>
+        <p class="hp-desc">Full Figma website for GRG Cafe — warm brand aesthetics, clear navigation, and mobile-responsive layouts.</p>
+        <div class="hp-meta-row">
+          <span><strong>Role:</strong> UI Designer</span>
+          <span><strong>Tools:</strong> Figma · Prototyping</span>
+        </div>
+        <a routerLink="/projects" class="hp-case-link">View Details
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- ── Vi Strings Website ────────────────────────────────── -->
+    <article class="hp-card hp-card-wide reveal-up" style="--reveal-delay:.32s">
+      <div class="hp-img-wrap hp-img-wrap-wide">
+        <img src="assets/images/project-vistrings.png"
+             alt="Vi Strings Website" class="hp-img"
+             onerror="this.parentElement.classList.add('hp-img-err')" />
+        <div class="hp-img-fb">VIS</div>
+        <div class="hp-overlay">
+          <a href="https://github.com/Stlntn4/Vi-Strings"
+             target="_blank" rel="noopener noreferrer" class="hp-overlay-gh"><i class="bi bi-github"></i> GitHub <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 2h8v8M10 2L2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a routerLink="/projects" class="hp-overlay-cs">Case Study <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <span class="hp-corner hp-corner-tl"></span>
+        <span class="hp-corner hp-corner-br"></span>
+      </div>
+      <div class="hp-info hp-info-wide">
+        <div class="hp-tags">
+          <span class="hp-tag">Major Project</span>
+          <span class="hp-tag">Full Development</span>
+          <span class="hp-tag hp-tag-yr">2024</span>
+        </div>
+        <h3 class="hp-title">Vi Strings Website</h3>
+        <p class="hp-desc">Designed and coded from scratch — complete development cycle from design concepts to final implementation with responsive layouts and clean code architecture.</p>
+        <div class="hp-meta-row">
+          <span><strong>Role:</strong> Designer &amp; Developer</span>
+          <span><strong>Tools:</strong> HTML · CSS · JavaScript · Figma</span>
+        </div>
+        <a routerLink="/projects" class="hp-case-link">View Details
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══ SKILLS ══════════════════════════════════════════════════ -->
+<section class="home-skills">
+  <div class="hs-inner">
+    <div class="hs-header reveal-up">
+      <span class="sec-index">03</span>
+      <h2 class="sec-heading">Skills &amp;<br><em>Expertise</em></h2>
+    </div>
+    <div class="hs-grid">
+      <div class="hs-card reveal-up" style="--reveal-delay:.00s">
+        <i class="bi bi-code-slash hs-icon"></i>
+        <h3 class="hs-name">Front-End</h3>
+        <p class="hs-desc">HTML, CSS, PHP, JavaScript, Angular</p>
+        <div class="hs-bar"><div class="hs-fill" style="--fill:88%"></div></div>
+        <span class="hs-pct">88%</span>
+      </div>
+      <div class="hs-card reveal-up" style="--reveal-delay:.10s">
+        <i class="bi bi-palette hs-icon"></i>
+        <h3 class="hs-name">Design Tools</h3>
+        <p class="hs-desc">Figma, Canva, Adobe Illustrator, Wireframing, Prototyping</p>
+        <div class="hs-bar"><div class="hs-fill" style="--fill:82%"></div></div>
+        <span class="hs-pct">82%</span>
+      </div>
+      <div class="hs-card reveal-up" style="--reveal-delay:.20s">
+        <i class="bi bi-phone hs-icon"></i>
+        <h3 class="hs-name">UX / UI</h3>
+        <p class="hs-desc">User Research, User Flow, Accessibility, Responsive Design</p>
+        <div class="hs-bar"><div class="hs-fill" style="--fill:79%"></div></div>
+        <span class="hs-pct">79%</span>
+      </div>
+      <div class="hs-card reveal-up" style="--reveal-delay:.30s">
+        <i class="bi bi-database hs-icon"></i>
+        <h3 class="hs-name">Back-End / DB</h3>
+        <p class="hs-desc">SQL, MongoDB, Node.js concepts</p>
+        <div class="hs-bar"><div class="hs-fill" style="--fill:52%"></div></div>
+        <span class="hs-pct">52%</span>
+      </div>
+      <div class="hs-card reveal-up" style="--reveal-delay:.40s">
+        <i class="bi bi-stars hs-icon"></i>
+        <h3 class="hs-name">Soft Skills</h3>
+        <p class="hs-desc">Creativity, Problem Solving, Attention to Detail, Communication, Leadership</p>
+        <div class="hs-bar"><div class="hs-fill" style="--fill:95%"></div></div>
+        <span class="hs-pct">95%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ══════════════════════════════════════════ -->
+<section class="home-certs">
+  <div class="hc-inner">
+    <div class="hc-header reveal-up">
+      <span class="sec-index sec-index-light">04</span>
+      <h2 class="sec-heading sec-heading-light">Certifications &amp;<br><em>Achievements</em></h2>
+    </div>
+    <div class="hc-grid">
+      <!--
+        Cert images — paths match your assets/images/cert*.png files.
+        CHANGE IF NEEDED: Update paths or add more cards.
+      -->
+      <div class="hc-card reveal-up" style="--reveal-delay:.00s"
+           (click)="openLightbox('assets/images/cert1.png','Certificate 1')">
+        <img src="assets/images/cert1.png" alt="Certificate 1" class="hc-img"/>
+        <div class="hc-overlay"><span class="hc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4H4v4M4 4l6 6M12 16h4v-4M16 16l-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>View</span></div>
+      </div>
+      <div class="hc-card reveal-up" style="--reveal-delay:.07s"
+           (click)="openLightbox('assets/images/cert2.png','Certificate 2')">
+        <img src="assets/images/cert2.png" alt="Certificate 2" class="hc-img"/>
+        <div class="hc-overlay"><span class="hc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4H4v4M4 4l6 6M12 16h4v-4M16 16l-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>View</span></div>
+      </div>
+      <div class="hc-card reveal-up" style="--reveal-delay:.14s"
+           (click)="openLightbox('assets/images/cert3.png','Certificate 3')">
+        <img src="assets/images/cert3.png" alt="Certificate 3" class="hc-img"/>
+        <div class="hc-overlay"><span class="hc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4H4v4M4 4l6 6M12 16h4v-4M16 16l-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>View</span></div>
+      </div>
+      <div class="hc-card reveal-up" style="--reveal-delay:.21s"
+           (click)="openLightbox('assets/images/cert4.png','Certificate 4')">
+        <img src="assets/images/cert4.png" alt="Certificate 4" class="hc-img"/>
+        <div class="hc-overlay"><span class="hc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4H4v4M4 4l6 6M12 16h4v-4M16 16l-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>View</span></div>
+      </div>
+      <div class="hc-card reveal-up" style="--reveal-delay:.28s"
+           (click)="openLightbox('assets/images/cert5.jpg','Certificate 5')">
+        <img src="assets/images/cert5.jpg" alt="Certificate 5" class="hc-img"/>
+        <div class="hc-overlay"><span class="hc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4H4v4M4 4l6 6M12 16h4v-4M16 16l-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>View</span></div>
+      </div>
+      <div class="hc-card reveal-up" style="--reveal-delay:.35s"
+           (click)="openLightbox('assets/images/cert6.png','Certificate 6')">
+        <img src="assets/images/cert6.png" alt="Certificate 6" class="hc-img"/>
+        <div class="hc-overlay"><span class="hc-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4H4v4M4 4l6 6M12 16h4v-4M16 16l-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>View</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA STRIP ═══════════════════════════════════════════════ -->
+<section class="home-cta">
+  <div class="home-cta-inner reveal-up">
+    <p class="home-cta-text">
+      Have a project in mind? <em>Let's build something great.</em>
+    </p>
+    <div class="home-cta-actions">
+      <a class="btn-primary" routerLink="/contact">
+        <span>Start a Project</span>
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a class="btn-ghost" routerLink="/resume">View Resume</a>
+    </div>
+  </div>
+  <div class="home-cta-deco" aria-hidden="true">Let's Talk</div>
+</section>
+
+<!-- ═══ LIGHTBOX ════════════════════════════════════════════════ -->
+<!-- Lightbox styles are in theme.css — lightbox-* classes -->
 <div class="lightbox" *ngIf="lightboxOpen" (click)="closeLightbox()">
-    <div class="lightbox-content" (click)="$event.stopPropagation()">
-        <button class="lightbox-close" (click)="closeLightbox()">&#x2715;</button>
-        <img [src]="lightboxImage" [alt]="lightboxAlt" class="lightbox-img" />
-    </div>
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <button class="lightbox-close" (click)="closeLightbox()" aria-label="Close">&#x2715;</button>
+    <img [src]="lightboxImage" [alt]="lightboxAlt" class="lightbox-img" />
+  </div>
 </div>

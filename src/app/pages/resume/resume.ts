@@ -5,12 +5,6 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Pipe, PipeTransform } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 
-/* ─────────────────────────────────────────────
-   SafeUrl pipe — keeps iframe src trusted.
-   You can move this to:
-   src/app/shared/pipes/safe-url.pipe.ts
-   and import it there instead.
-   ───────────────────────────────────────────── */
 @Pipe({ name: 'safe', standalone: true })
 export class SafeUrlPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}
@@ -28,35 +22,45 @@ export class SafeUrlPipe implements PipeTransform {
   encapsulation: ViewEncapsulation.None
 })
 export class Resume implements OnInit, OnDestroy {
-  isScrolled  = false;
-  currentYear = new Date().getFullYear();
-
-  /* ── Certificate Modal State ── */
+  isScrolled      = false;
+  currentYear     = new Date().getFullYear();
   isCertModalOpen = false;
   activeCertTitle = '';
-  activeCertSrc   = '';  // empty = file not uploaded yet → shows placeholder
+  activeCertSrc   = '';
+
+  private observer?: IntersectionObserver;
 
   constructor(public themeService: ThemeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => this.initReveal(), 100);
+  }
 
   ngOnDestroy(): void {
+    this.observer?.disconnect();
     document.body.style.overflow = '';
   }
 
-  /* ── Navbar scroll detection ── */
+  private initReveal(): void {
+    if (!('IntersectionObserver' in window)) return;
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          this.observer!.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right')
+      .forEach(el => this.observer!.observe(el));
+  }
+
   @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
-  }
+  onWindowScroll() { this.isScrolled = window.scrollY > 50; }
 
-  /* ── Close modal on Escape key ── */
   @HostListener('document:keydown.escape')
-  onEscKey() {
-    if (this.isCertModalOpen) this.closeCert();
-  }
+  onEscKey() { if (this.isCertModalOpen) this.closeCert(); }
 
-  /* ── Open certificate modal ── */
   openCert(title: string, src: string): void {
     this.activeCertTitle = title;
     this.activeCertSrc   = src;
@@ -64,7 +68,6 @@ export class Resume implements OnInit, OnDestroy {
     document.body.style.overflow = 'hidden';
   }
 
-  /* ── Close certificate modal ── */
   closeCert(): void {
     this.isCertModalOpen = false;
     this.activeCertTitle = '';
@@ -72,10 +75,8 @@ export class Resume implements OnInit, OnDestroy {
     document.body.style.overflow = '';
   }
 
-  /* ── Close when clicking the dark backdrop ── */
   onOverlayClick(event: MouseEvent): void {
-    const target = event.target as HTMLElement;
-    if (target.classList.contains('cert-modal-overlay')) {
+    if ((event.target as HTMLElement).classList.contains('cert-modal-overlay')) {
       this.closeCert();
     }
   }

@@ -1,0 +1,37 @@
+<!--
+  scroll-nav.html
+  Add <app-scroll-nav> to app.component.html so it shows on ALL pages:
+
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+    <app-scroll-nav></app-scroll-nav>   ← add this line
+-->
+
+<!-- Scroll UP button — appears after scrolling 300px down -->
+<button
+  class="scroll-btn scroll-btn-up"
+  [class.visible]="showUp"
+  (click)="scrollUp()"
+  aria-label="Scroll to top"
+  title="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M8 12V4M4 8l4-4 4 4"
+          stroke="currentColor" stroke-width="1.6"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<!-- Scroll DOWN button — appears when not at bottom, hides when near bottom -->
+<button
+  class="scroll-btn scroll-btn-down"
+  [class.visible]="showDown"
+  (click)="scrollDown()"
+  aria-label="Scroll down"
+  title="Scroll down">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M8 4v8M4 8l4 4 4-4"
+          stroke="currentColor" stroke-width="1.6"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
