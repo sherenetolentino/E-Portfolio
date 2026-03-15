@@ -1,42 +1,55 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/-%20Sherene%20Tolentino%20-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=c4795b" height="40"/>
+<br/>
 
-**Front-End Designer · UI/UX-Focused Web Developer**
+<img src="https://img.shields.io/badge/Sherene%20Tolentino-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=c4795b" height="45"/>
 
-[![Portfolio](https://img.shields.io/badge/View%20Live%20Portfolio-c4795b?style=for-the-badge&logo=googlechrome&logoColor=fafaf8)](https://stlntn4.github.io/E-Portfolio/)
+<br/>
+<br/>
 
-*Designing clean and user-centered web experiences.*
+**`Front-End Designer · UI/UX-Focused Web Developer`**
+
+<br/>
+
+[![Portfolio](https://img.shields.io/badge/🌐%20View%20Live%20Portfolio-c4795b?style=for-the-badge&logoColor=fafaf8)](https://stlntn4.github.io/WDFOL_Portfolio/)
+[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Stlntn4)
+
+<br/>
+
+*Designing clean, accessible, and user-centered web experiences.*
+
+<br/>
+
+---
 
 </div>
 
----
+## 👩‍💻 About Me
 
-## About Me
-
-I am a front-end designer with a strong interest in UI/UX design and user-centered development. I enjoy planning layouts, designing interfaces, and organizing content to improve user experience. I also have basic knowledge in back-end development and databases and am keen to expand these skills. I continue to learn through personal projects, online courses, and seminars.
+I am a front-end designer with a strong interest in **UI/UX design** and user-centered development. I enjoy planning layouts, designing interfaces, and organizing content to improve user experience. I also have basic knowledge in back-end development and databases, and am continuously expanding these skills through personal projects, online courses, and seminars.
 
 ---
 
-## Pages
+## 🗂️ Portfolio Pages
 
 | Page | Description |
 |------|-------------|
-| **Home** | Landing page with hero section, skills, and badges |
-| **About Me** | Bio, technical skills, soft skills, and certifications |
-| **Projects** | Portfolio of UI/UX and front-end design work |
-| **Resume** | Education, experience, and downloadable resume |
-| **Contact** | Contact form and social links |
+| 🏠 **Home** | Landing page with hero section, skills, and badges |
+| 🙋 **About Me** | Bio, technical skills, soft skills, and certifications |
+| 💼 **Projects** | Portfolio of UI/UX and front-end design work |
+| 📄 **Resume** | Education, experience, and downloadable resume |
+| 📬 **Contact** | Contact form and social links |
 
 ---
 
-## Skills
+## 🛠️ Skills
 
 **Front-End Development**
 
 ![HTML5](https://img.shields.io/badge/HTML5-1a1a1a?style=flat-square&logo=html5&logoColor=c4795b)
 ![CSS3](https://img.shields.io/badge/CSS3-1a1a1a?style=flat-square&logo=css3&logoColor=8b9d83)
 ![JavaScript](https://img.shields.io/badge/JavaScript-1a1a1a?style=flat-square&logo=javascript&logoColor=c4795b)
+![Angular](https://img.shields.io/badge/Angular-1a1a1a?style=flat-square&logo=angular&logoColor=c4795b)
 
 **Design Tools**
 
@@ -45,47 +58,47 @@ I am a front-end designer with a strong interest in UI/UX design and user-center
 
 **UX / UI**
 
-- Wireframing & Prototyping
-- User Research & User Flow
-- Responsive Design
-- Accessibility
+![Wireframing](https://img.shields.io/badge/Wireframing%20%26%20Prototyping-1a1a1a?style=flat-square&logoColor=white)
+![User Research](https://img.shields.io/badge/User%20Research%20%26%20User%20Flow-1a1a1a?style=flat-square&logoColor=white)
+![Responsive](https://img.shields.io/badge/Responsive%20Design-1a1a1a?style=flat-square&logoColor=white)
+![Accessibility](https://img.shields.io/badge/Accessibility-1a1a1a?style=flat-square&logoColor=white)
 
 **Back-End / Database** *(Basic — Learning Focus)*
 
 ![Node.js](https://img.shields.io/badge/Node.js-1a1a1a?style=flat-square&logo=nodedotjs&logoColor=8b9d83)
 ![Firebase](https://img.shields.io/badge/Firebase-1a1a1a?style=flat-square&logo=firebase&logoColor=c4795b)
-![MySQL](https://img.shields.io/badge/SQL-1a1a1a?style=flat-square&logo=mysql&logoColor=8b9d83)
+![MySQL](https://img.shields.io/badge/MySQL-1a1a1a?style=flat-square&logo=mysql&logoColor=8b9d83)
 
 **Soft Skills**
 
-- Creativity & Attention to Detail
-- Problem Solving
-- Time Management
-- Effective Communication
+![Creativity](https://img.shields.io/badge/Creativity%20%26%20Attention%20to%20Detail-1a1a1a?style=flat-square)
+![Problem Solving](https://img.shields.io/badge/Problem%20Solving-1a1a1a?style=flat-square)
+![Time Management](https://img.shields.io/badge/Time%20Management-1a1a1a?style=flat-square)
+![Communication](https://img.shields.io/badge/Effective%20Communication-1a1a1a?style=flat-square)
 
 ---
 
-## Projects
+## 🚀 Featured Projects
 
-**Personal Portfolio UI Design**
+### 🎨 Personal Portfolio UI Design
 > A minimal and professional portfolio website designed in Figma, focusing on layout structure, typography hierarchy, and usability for job applications.
 
-**Café Website UI/UX Concept**
+### ☕ Café Website UI/UX Concept
 > A responsive website design concept for a café business, emphasizing clear navigation, accessible menus, and smooth user flow across sections.
 
-**Landing Page Design Concept**
+### 📐 Landing Page Design Concept
 > A front-end landing page mockup designed to highlight call-to-action placement, spacing, and responsive behavior across screen sizes.
 
 ---
 
-## Education
+## 🎓 Education
 
 **Bachelor of Science in Information Technology**
 *(Current Student)*
 
 ---
 
-## Certifications & Badges
+## 🏅 Certifications & Badges
 
 **FreeCodeCamp**
 
@@ -99,11 +112,11 @@ I am a front-end designer with a strong interest in UI/UX design and user-center
 
 ---
 
-## Contact
+## 📬 Contact
 
 [![Email](https://img.shields.io/badge/sherenetolentino@email.com-1a1a1a?style=flat-square&logo=gmail&logoColor=c4795b)](mailto:sherenetolentino@email.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-1a1a1a?style=flat-square&logo=linkedin&logoColor=8b9d83)](#)
-[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=flat-square&logo=github&logoColor=fafaf8)](#)
+[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=flat-square&logo=github&logoColor=fafaf8)](https://github.com/Stlntn4)
 [![Behance](https://img.shields.io/badge/Behance-1a1a1a?style=flat-square&logo=behance&logoColor=8b9d83)](#)
 
 ---
