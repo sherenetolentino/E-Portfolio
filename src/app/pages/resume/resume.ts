@@ -27,6 +27,7 @@ export class Resume implements OnInit, OnDestroy {
   isCertModalOpen = false;
   activeCertTitle = '';
   activeCertSrc   = '';
+  activeCertVerify = '';   // optional official verification URL
 
   private observer?: IntersectionObserver;
 
@@ -61,9 +62,10 @@ export class Resume implements OnInit, OnDestroy {
   @HostListener('document:keydown.escape')
   onEscKey() { if (this.isCertModalOpen) this.closeCert(); }
 
-  openCert(title: string, src: string): void {
+  openCert(title: string, src: string, verifyUrl: string = ''): void {
     this.activeCertTitle = title;
     this.activeCertSrc   = src;
+    this.activeCertVerify = verifyUrl;
     this.isCertModalOpen = true;
     document.body.style.overflow = 'hidden';
   }
@@ -72,6 +74,7 @@ export class Resume implements OnInit, OnDestroy {
     this.isCertModalOpen = false;
     this.activeCertTitle = '';
     this.activeCertSrc   = '';
+    this.activeCertVerify = '';
     document.body.style.overflow = '';
   }
 
