@@ -563,3 +563,40 @@ body.dark-mode .rs-cert-close-btn { color: #a09a96; border-color: rgba(240,237,2
   .rs-cert-cols-4 { grid-template-columns: 1fr; }
   .rs-cert-modal-body iframe { height: 300px; }
 }
+
+/* ================================================================
+   EXPERIENCE + SKILL TAGS + VERIFY BUTTON (added)
+   Re-uses existing timeline / card styles and tag colour tokens.
+   ================================================================ */
+.rs-exp-desc {
+  font-size: 14px; color: #5a5558; line-height: 1.75; margin: 10px 0 16px;
+  max-width: 640px; font-family: var(--ff-body, 'DM Sans', sans-serif);
+  transition: color 0.35s;
+}
+body.dark-mode .rs-exp-desc { color: #a09a96; }
+.rs-exp-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.rs-exp-tag, .rs-prof-tag {
+  font-size: 11.5px; letter-spacing: 0.06em; color: var(--tag-text, #c4795b);
+  background: var(--tag-bg, rgba(196,121,91,0.08));
+  border: 1px solid var(--tag-border, rgba(196,121,91,0.25));
+  padding: 5px 12px; border-radius: 40px; line-height: 1.3;
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  transition: background 0.3s, border-color 0.35s;
+}
+.rs-exp-link {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: #c4795b; text-decoration: none;
+  transition: gap 0.3s, color 0.3s;
+}
+.rs-exp-link:hover { gap: 12px; color: #b86847; text-decoration: none; }
+.rs-prof-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.rs-prof-tag:hover { background: rgba(196,121,91,0.14); }
+.rs-cert-verify-btn {
+  font-size: 12px; font-weight: 400; letter-spacing: 0.09em; text-transform: uppercase;
+  color: #5a5558; padding: 10px 20px; border-radius: 40px; text-decoration: none;
+  border: 1px solid rgba(26,26,26,0.14); background: transparent;
+  font-family: var(--ff-body, 'DM Sans', sans-serif);
+  transition: border-color 0.3s, color 0.3s;
+}
+body.dark-mode .rs-cert-verify-btn { color: #a09a96; border-color: rgba(240,237,232,0.14); }
+.rs-cert-verify-btn:hover { border-color: #c4795b; color: #c4795b; text-decoration: none; }
